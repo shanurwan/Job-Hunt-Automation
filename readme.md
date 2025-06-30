@@ -41,5 +41,5 @@ Key Takeaway :
 ```
 ---
 
-## I'm currently occupied with other stuff, progress will be really slow and will only speed up starting end of August
+## I'm currently occupied with other priority, progress will be really slow and will only speed up starting mid of August
 
