@@ -1,4 +1,4 @@
-# job-hunt-automation
+# AutoApply: A Python-Powered Job Hunt Assistant
 
 A personal tool I’m building to take the pain out of job searching. It scrapes job listings, tailors my resume using templates, and logs everything I apply to .
 
