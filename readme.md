@@ -22,6 +22,7 @@ No LLMs, no APIs, just Python, a bit of HTML scraping, and automation.
 This is my attempt to streamline the process and focus on the parts that actually matter like preparing for interviews and continuous upskilling.
 
 Key Takeaway :
+
 🔍 Built as a learning project to study jobseeker behavior, optimize resume targeting, and explore real-world automation ethics.
 
 ⚠️ Not a spam bot. Not built for mass blind submissions. This is a **controlled, personal-use tool** focused on workflow automation and learning.
