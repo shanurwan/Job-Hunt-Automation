@@ -33,10 +33,12 @@ Key Takeaway :
 
 ```text
 1. job_scraper/     → Pulls job ads from target boards
-2. resume_maker/    → Uses templates and job keywords to generate docs
-3. tracker/         → Stores applications in SQLite
-4. submitter/       → Automates form submission via Selenium
-5. main.py          → Glues everything together
+2. Preprocess text  → Extract features.
+3. Predict best matches → Rank jobs.
+4. resume_maker/    → Uses templates and job keywords to generate docs
+5. tracker/         → Stores applications in SQLite
+6. submitter/       → Automates form submission via Selenium
+7. main.py          → Glues everything together
 
 ```
 ---
