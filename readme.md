@@ -7,9 +7,9 @@ A personal tool I’m building to take the pain out of job searching. It scrapes
 ## What It Does
 
 - Scrapes job ads from selected sites
-- Matches keywords between job ad and resume
+- Text Preprocessing
 - Predict best match
-- Fills in a resume and cover letter template automatically
+- Fills in a resume and cover letter template automatically for job with matching percentage above 85% only
 - Logs job applications in a local database
 - Auto-fills and submits applications with Selenium
 - Sends reminders or updates when there's no response
