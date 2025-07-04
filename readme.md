@@ -34,8 +34,8 @@ Key Takeaway :
 
 ```text
 1. job_scraper/     → Pulls job ads from target boards
-2. text_preprocessor/  → Extract features.
-3. job_rank/ → Rank jobs.
+2. preprocessor/    → Extract features.
+3. job_rank/        → Rank jobs.
 4. resume_maker/    → Uses templates and job keywords to generate docs
 5. tracker/         → Stores applications in SQLite
 6. submitter/       → Automates form submission via Selenium
