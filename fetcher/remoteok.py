@@ -42,8 +42,8 @@ def scrape_remoteok():
             print(f" Error scraping job row: {e}")
 
     df = pd.DataFrame(jobs)
-    df.to_csv("remoteok_analyst_jobs.csv", index=False)
-    print(f"✅ Saved {len(df)} analyst jobs to remoteok_analyst_jobs.csv")
+    df.to_csv("remoteok_analyst_jobs.csv", index=False, encoding="utf-8")
+    print(f" Saved {len(jobs)} jobs to remoteok_jobs.csv")
 
 if __name__ == "__main__":
-    scrape_analyst_jobs_only()
+    scrape_remoteok()
