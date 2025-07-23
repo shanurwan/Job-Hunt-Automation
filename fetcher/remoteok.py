@@ -29,7 +29,7 @@ def scrape_analyst_jobs_only():
 
     df = pd.DataFrame(jobs)
     df.to_csv("remoteok_analyst_jobs.csv", index=False)
-    print(f"✅ Saved {len(df)} analyst jobs to remoteok_analyst_jobs.csv")
+    print(f" Saved {len(df)} analyst jobs to remoteok_analyst_jobs.csv")
 
 if __name__ == "__main__":
     scrape_analyst_jobs_only()
