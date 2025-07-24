@@ -1,0 +1,31 @@
+# Ignore all CSV files
+*.csv
+
+# Ignore job data folder
+/data/
+
+# Ignore auto-generated resumes
+/resume_output/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+env/
+venv/
+
+# Logs and runtime files
+*.log
+*.sqlite3
+*.db
+
+# Jupyter and editor stuff
+.ipynb_checkpoints/
+.vscode/
+*.ipynb
+
+# OS-generated
+.DS_Store
+Thumbs.db
