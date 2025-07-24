@@ -1,51 +1,48 @@
-import re
 from bs4 import BeautifulSoup
 import html
+import re
+import unicodedata
+import string
 import pandas as pd
 
-# Define skill keywords
-SKILL_SET = [
-    "python", "sql", "excel", "powerbi", "power bi", "tableau", "vba", "dax", 
-    "ai", "data", "data analysis", "data analytics", "analytics", "machine learning",
-    "pipeline", "etl", "web scraping", "selenium", "data entry", "admin", 
-    "aws", "gcp", "azure", "api", "cloud", "linux", "golang", 
-    "salesforce", "wordpress", "jira", "scrum", "snowflake", "looker", 
-    "dbt", "rstudio", "matplotlib", "pandas", "numpy", "statistical analysis"
-]
+def clean_description(html_description):
+    # 1. Parse and remove HTML tags
+    soup = BeautifulSoup(html_description, 'html.parser')
+    text = soup.get_text(separator="\n")  # keep structure with newlines
 
+    # 2. Decode HTML entities (&amp;, etc)
+    text = html.unescape(text)
 
-def clean_html(raw_html: str) -> str:
-    try:
-        soup = BeautifulSoup(str(raw_html), "html.parser")
-        clean_text = soup.get_text(separator=" ")
-        return html.unescape(clean_text.encode('latin1').decode('utf-8', errors='ignore'))
-    except Exception:
-        return str(raw_html)
+    # 3. Normalize weird unicode characters
+    text = unicodedata.normalize("NFKD", text)
 
+    # 4. Fix encoding artifacts (â€™, ðŸ’°, etc)
+    text = text.encode("latin1", errors="ignore").decode("utf-8", errors="ignore")
 
-def extract_skills(text: str, skill_set=SKILL_SET) -> list:
-    """Extract matching skills from text"""
-    text = str(text).lower()
-    found = [skill for skill in skill_set if re.search(rf'\b{re.escape(skill)}\b', text)]
-    return list(set(found))
+    # 5. Clean up excess whitespace
+    text = re.sub(r'\n+', '\n', text)           # collapse multiple newlines
+    text = re.sub(r'[ \t]+', ' ', text)         # collapse spaces/tabs
+    text = text.strip()
 
-def preprocess_job_row(row: pd.Series) -> dict:
-    """Process one job row: clean + extract"""
-    desc = row.get("description", "")
-    tags = row.get("tags", "")
-    cleaned_desc = clean_html(desc)
-    combined_text = f"{cleaned_desc} {tags}"
-    skills = extract_skills(combined_text)
+    return text
 
-    return {
-        "title": row.get("title", ""),
-        "company": row.get("company", ""),
-        "location": row.get("location", ""),
-        "skills": skills,
-        "url": row.get("url", ""),
-        "clean_description": cleaned_desc
-    }
+def preprocess(text):
+    # Lowercase
+    text = text.lower()
+    # Remove punctuation
+    text = text.translate(str.maketrans('', '', string.punctuation))
+    # Remove numbers
+    text = re.sub(r'\d+', '', text)
+    # Remove extra whitespace
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
 
-def preprocess_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-    """Preprocess entire DataFrame"""
-    return df.apply(preprocess_job_row, axis=1, result_type="expand")
+def preprocess_dataset(csv_path, output_path="remoteok_jobs_cleaned.csv"):
+    df = pd.read_csv(csv_path)
+    df["clean_description"] = df["description"].apply(clean_description)
+    df["preprocessed_description"] = df["clean_description"].apply(preprocess)
+    df.to_csv(output_path, index=False)
+    print(f"Saved cleaned data to {output_path}")
+
+# Example usage (uncomment if testing standalone)
+# preprocess_dataset("remoteok_analyst_jobs.csv")
