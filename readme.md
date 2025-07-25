@@ -1,6 +1,8 @@
 # AutoApply: A Python-Powered Job Hunt Assistant
 
-A personal tool I’m building to take the pain out of job searching. It scrapes job listings, tailors my resume using templates, and logs everything I apply to .
+Version 1 – Entry Level but Practical
+
+A personal tool I’m building to take the pain out of job searching. It scrapes job listings, tailors my resume using templates, and logs everything I apply to. The main goal for current version is to help catch rare but fitting job openings.
 
 ---
 
@@ -50,6 +52,53 @@ So I built a personal-use tool to help catch rare but fitting job openings espec
 ```
 ---
 
+## Instruction
+
+1. Clone the repo
+
+```
+
+git clone https://github.com/shanurwan/Job-Hunt-Automation.git
+cd Job-Hunt-Automation
+
+```
+
+2. Set up python environment 
+
+
+```
+
+# Create virtual environment (windows)
+python -m venv venv
+source venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+
+```
+
+3. Customize yourself
+
+- job_scraper/remoteok.py = current link monitor analyst job, change to your desired job
+
+- job_rank/jobrank.py = adjust user's skill and interest with yours
+
+- resume_maker/base_resume.txt = adjust with your general resume
+
+- submitter/autoapply.py = adjust with your personal information
+
+---
+
+4. Run the script = 
+
+```
+python main.py
+
+```
+
+---
+
 ##  Who this could benefit:
 
 •	Parent caretakers who can’t relocate
@@ -59,6 +108,13 @@ So I built a personal-use tool to help catch rare but fitting job openings espec
 •	Those who can’t afford premium job tools
 
 •	Career switchers with limited time
+
+---
+##  Upcoming version 2 upgrade 
+
+- scrape more website
+
+
 
 
 
