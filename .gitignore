@@ -1,12 +1,3 @@
-# Ignore all CSV files
-*.csv
-
-# Ignore job data folder
-/data/
-
-# Ignore auto-generated resumes
-/resume_output/
-
 # Python artifacts
 __pycache__/
 *.py[cod]
