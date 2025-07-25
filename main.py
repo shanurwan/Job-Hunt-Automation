@@ -43,24 +43,39 @@ for _, row in top_jobs.iterrows():
     resume_path = generate_resume(row, template, resume_dir)
     print(f" Resume generated: {resume_path}")
 
-# 5. SUBMISSION (will update after Submitter module ready)
-# from submitter.submit import auto_apply_to_job
-# for _, row in top_jobs.iterrows():
-#     pdf_path = resume_dir / generate_resume_filename(row)
-#     auto_apply_to_job(row["job_url"], pdf_path)
+# 5. SUBMITTER (Now Active)
+from submitter.submit import auto_apply_to_job
 
-#  TRACKER
+for _, row in top_jobs.iterrows():
+    resume_filename = f"{row['title'].replace(' ', '_')}-{row['company'].replace(' ', '_')}.pdf"
+    resume_path = resume_dir / resume_filename
+    try:
+        auto_apply_to_job(
+            job_url=row["job_url"],
+            resume_path=resume_path,
+            full_name="Your Name",
+            email="you@example.com",
+            phone="0123456789",
+            location="Malaysia",
+            pronouns="He/him",
+            linkedin="https://linkedin.com/in/yourprofile"
+        )
+    except Exception as e:
+        print(f" Failed to submit for job at {row['company']}: {e}")
+
+# 6. TRACKER
 from tracker.tracker import init_db, log_application
 init_db()
 
 for _, row in top_jobs.iterrows():
-    resume_path = f"resumes/{row['title'].replace(' ', '_')}-{row['company'].replace(' ', '_')}.pdf"
+    resume_filename = f"{row['title'].replace(' ', '_')}-{row['company'].replace(' ', '_')}.pdf"
+    resume_path = f"resumes/{resume_filename}"
     log_application(
         job_title=row["title"],
         company=row["company"],
         job_url=row["job_url"],
         resume_file=resume_path,
-        status="RESUME_READY"
+        status="SUBMITTED"
     )
 
 print(" Done.")
