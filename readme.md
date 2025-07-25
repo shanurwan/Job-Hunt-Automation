@@ -23,9 +23,13 @@ No LLMs, no APIs, just Python, a bit of HTML scraping, and automation.
 This is my attempt to streamline the process and focus on the parts that actually matter like preparing for interviews and continuous upskilling.
 
 Most people miss great job opportunities because:
+
 •	They’re overwhelmed juggling life & work
+
 •	They don’t check job boards daily
+
 •	They can’t tailor resumes fast enough
+
 •	Remote roles disappear quickly
 
 So I built a personal-use tool to help catch rare but fitting job openings especially remote ones.
