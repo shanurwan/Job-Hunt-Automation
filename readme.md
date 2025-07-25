@@ -49,8 +49,11 @@ So I built a personal-use tool to help catch rare but fitting job openings espec
 ##  Who this could benefit:
 
 •	Parent caretakers who can’t relocate
+
 •	Underserved or remote-region jobseekers
+
 •	Those who can’t afford premium job tools
+
 •	Career switchers with limited time
 
 
