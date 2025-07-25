@@ -87,6 +87,8 @@ pip install -r requirements.txt
 
 - submitter/autoapply.py = adjust with your personal information 
 
+Note : For detail customization guide please refer to [intruction.txt](https://github.com/shanurwan/Job-Hunt-Automation/blob/main/intruction.txt) . To be able to run the script there are few mandatory customization must be adjusted even for test purpose.
+
 ---
 
 4. Run the script = 
