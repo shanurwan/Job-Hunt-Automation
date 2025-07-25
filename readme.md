@@ -96,6 +96,10 @@ python main.py
 
 ```
 
+5.  Run on a Schedule with GitHub Actions
+
+This project includes a simple workflow to automate weekly runs.
+
 ---
 
 ##  Who this could benefit:
@@ -111,7 +115,18 @@ python main.py
 ---
 ##  Upcoming version 2 upgrade 
 
-- scrape more website
+- Broader Job Source Coverage : Scrape more job platforms for better discovery
+
+
+- Scan Reddit & Twitter for hidden, niche job opportunities (especially remote and startup roles)
+
+
+- Smarter Data Handling : Modular data cleaning and text preprocessing, enabling better handling of messy job data from multiple sources
+
+
+- Intelligent job submission : Add automated email submission feature for jobs posted on Reddit and Twitter (with safety and manual override controls)
+
+
 
 
 
