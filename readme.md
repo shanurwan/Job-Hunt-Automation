@@ -2,7 +2,7 @@
 
 Version 1 – Entry Level but Practical
 
-A personal tool I’m building to take the pain out of job searching. It scrapes job listings, tailors my resume using templates, and logs everything I apply to. The main goal for current version is to help catch rare but fitting job openings.
+A personal tool I’m building to take the pain out of job searching. It scrapes job listings, tailors my resume using templates, and logs everything I apply to. This is my attempt to streamline the process and focus on the parts that actually matter like preparing for interviews and continuous upskilling.
 
 ---
 
@@ -22,7 +22,6 @@ No LLMs, no APIs, just Python, a bit of HTML scraping, and automation.
 
 ## Why I’m Building This
 
-This is my attempt to streamline the process and focus on the parts that actually matter like preparing for interviews and continuous upskilling.
 
 Most people miss great job opportunities because:
 
