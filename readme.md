@@ -85,7 +85,7 @@ pip install -r requirements.txt
 
 - resume_maker/base_resume.txt = adjust with your general resume
 
-- submitter/autoapply.py = adjust with your personal information
+- submitter/autoapply.py = adjust with your personal information 
 
 ---
 
