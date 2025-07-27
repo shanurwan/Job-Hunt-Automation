@@ -37,7 +37,8 @@ df["match_score"] = df["top_keywords"].apply(lambda x: match_score(x, user_skill
 ranked_jobs = df.sort_values(by="match_score", ascending=False)
 
 # Save ranked job list
-ranked_jobs.to_csv("ranked_jobs.csv", index=False)
+ranked_jobs.to_csv("data/ranked_jobs.csv", index=False)
+
 
 # Optional: quick preview
 # print(ranked_jobs[["title", "company", "match_score", "top_keywords", "job_url"]].head())
