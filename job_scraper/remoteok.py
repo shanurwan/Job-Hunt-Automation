@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
+import os
 
 def scrape_remoteok():
     url = "https://remoteok.com/remote-analyst-jobs"
@@ -41,9 +42,13 @@ def scrape_remoteok():
         except Exception as e:
             print(f" Error scraping job row: {e}")
 
+   
+
     df = pd.DataFrame(jobs)
-    df.to_csv("remoteok_analyst_jobs.csv", index=False, encoding="utf-8")
-    print(f" Saved {len(jobs)} jobs to remoteok_jobs.csv")
+    os.makedirs("data", exist_ok=True)
+    df.to_csv("data/remoteok_analyst_jobs.csv", index=False, encoding="utf-8")
+    print(f" Saved {len(jobs)} jobs to data/remoteok_analyst_jobs.csv")
+
 
 if __name__ == "__main__":
     scrape_remoteok()
