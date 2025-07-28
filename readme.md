@@ -98,7 +98,7 @@ python main.py
 
 ```
 
-5.  Run on a Schedule with GitHub Actions
+5.  Run on a Schedule with Window Task Scheduler
 
 This project includes a simple workflow to automate weekly runs.
 

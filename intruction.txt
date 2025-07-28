@@ -1,10 +1,9 @@
 Friendly Reminder :
 - The main purpose of this script is for targeted application not blind luck
-- Do not expose hardcoded personal information in the script (use environment variable)
-- Please use github action secrets to store sensitive information
+- Since autoapply needs privacy, browser and human-like actions therefore it is best
+  to schedule weekly run locally (works well if you're always on laptop)
 - Don't include your .env file in the repo
-- Don’t print secrets in logs (print(email) will show up in the Action logs)
-- Don’t put secrets inside .py files
+
 
 
 Customization guide
